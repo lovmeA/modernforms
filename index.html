@@ -1,31 +1,15 @@
-# forms.validate 使用方法
-
-#### 说明：
-1. Modern Forms (精美的纯css3 html5表单框架) 验证器
-2. 标签属性
-    1.  `data-required`: 普通文本必填项 `data-required="提示信息"`
-    2.  `data-length`: 长度区间 `data-length="4-6"`
-    3.  `data-length`: ~到无穷大 `data-length="100-*"`
-    4.  `data-min`: 最小值 `data-min="5"`
-    5.  `data-max`: 最大值 `data-min="10"`
-    6.  `data-rules`: 自定义正则 `data-rules="/^(0\d{2,3}\d{7,8}|0\d{2,3}-)\d{7,8}$/" data-rule-message="错误信息"`
-    7.  `data-equal`: 对比 `data-equal="#id"`
-    8.  `data-idcard`: 身份证验证 `data-idcard="身份证号码不正确"`
-    9.  `data-url`: URL验证 ` data-url="URL验证失败"`
-    10. `data-email`: 邮箱验证 ` data-email="请输入正确的电子邮箱"`
-    11. `data-phone`: 手机号验证 ` data-phone="请输入正确的手机号码"`
-3. js参数解释
-    1. `url`: 默认`form.action`
-    2. `method`: 默认`POST`
-    3. `submitBtn`: 提交表单触发事件元素(默认:`input:submit`)
-    4. `async`: 默认为`true`(同步)
-    5. `data`: 额外提交的数据,数据格式:`{k:'v','k1':'v1'}`
-    6. `success`: 表单提交成功方法 `function(){}`
-    7. `fail`: 表单提交失败方法 `function(){}`
-    8. `sends`: 是否向后台提交数据,默认为 `true`
-    
-#### 示例 `from` HTML配置
-```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Modern Forms </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="modernforms.min.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <script src="jquery.js"></script>
+    <script src="forms.validate.min.js"></script>
+</head>
+<body class="mdn-bg">
 <form class="modern-forms" id="form" style="width:600px;margin:30px auto">
     <fieldset>
         <div class="form-row">
@@ -116,27 +100,19 @@
         <button type="button" id="submitBtn" class="mdn-button btn-primary">提交</button>
     </div>
 </form>
-```
-    
-#### 示例 `from` JQuery配置
-
-```javascript
-$('#form').form({
-    url: '/url',
-    method: 'POST',
-    submitBtn: '#submitBtn',
-    async: true,
-    sends: true,
-    data: {
-        data1: 'value1',
-        data2: 'value2',
-        data3: 'value3'
-    },
-    success: function (data) {
-        console.log(data)
-    },
-    fail: function (data) {
-        console.log(data)
-    }
-});
-```
+<script>
+    $(function () {
+        $('#form').form({
+            submitBtn: '#submitBtn',
+            sends: false,
+            success: function (data) {
+                console.log(data)
+            },
+            fail: function (data) {
+                console.log(data)
+            }
+        });
+    })
+</script>
+</body>
+</html>
