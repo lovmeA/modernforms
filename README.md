@@ -1,4 +1,4 @@
-# forms.validate 使用方法
+# forms.validate 使用方法(精美的纯css3 html5表单框架表单验证)
 
 #### 说明：
 1. Modern Forms (精美的纯css3 html5表单框架) 验证器
