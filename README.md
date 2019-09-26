@@ -1,8 +1,7 @@
-# forms.validate 使用方法(精美的纯css3 html5表单框架表单验证)
+# Modern Forms (精美的纯css3 html5表单框架) 验证器
 
 #### 说明：
-1. Modern Forms (精美的纯css3 html5表单框架) 验证器
-2. 标签属性
+1. 标签属性
     1.  `data-required`: 普通文本必填项 `data-required="提示信息"`
     2.  `data-length`: 长度区间 `data-length="4-6"`
     3.  `data-length`: ~到无穷大 `data-length="100-*"`
@@ -14,7 +13,7 @@
     9.  `data-url`: URL验证 ` data-url="URL验证失败"`
     10. `data-email`: 邮箱验证 ` data-email="请输入正确的电子邮箱"`
     11. `data-phone`: 手机号验证 ` data-phone="请输入正确的手机号码"`
-3. js参数解释
+2. js参数解释
     1. `url`: 默认`form.action`
     2. `method`: 默认`POST`
     3. `submitBtn`: 提交表单触发事件元素(默认:`input:submit`)
